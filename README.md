@@ -1,2 +1,0 @@
-﻿# Lista-de-tarefas-JS
-Lista de tarefas desenvolvida a partir de um exercicio escolar da Instituição Infinity School.

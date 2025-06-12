@@ -11,7 +11,8 @@ while(true){
                 alert("Campo de terefas vazio.")
             }else{
                 tarefas.push(texto);
-                alert("Tarefa adicionada com sucesso!"); }}
+                alert("Tarefa adicionada com sucesso!"); 
+            }}
         else if (usuario == "2"){
             if(tarefas.length === 0){
                 alert("Lista de tarefas vazia." )
@@ -20,21 +21,22 @@ while(true){
             }
         else if (usuario == "3"){
             let remover = prompt("Informe a posição da tarefa: ");
-            if (remover === ""){
-                alert("Informe a quantidade.");
+            let deletar = Number(remover);
+            if (remover === "" || isNaN(deletar) || deletar < 0 || deletar >= tarefas.length){
+                alert("Informe uma posição válida.");
             }else{tarefas.splice(remover,1)
                 alert("Tarefa removida com sucesso!");}}
         else if(usuario == "4"){
-            let posição_tarefa = prompt("Informe a posição da tarefa:");
-            let posicao = Number(posição_tarefa);
-                if(posição_tarefa === ""){
-                    alert("Informe uma posição válida.");
-                }else{
-                    let modificar = prompt("Concluida ou pendente:");
-                    let partes = tarefas[posicao].split("-");
-                    tarefas[posicao] = `${partes[0]} - ${modificar}`
-                    alert("Tarefa modificada com sucesso!");
-                }}
+            let posicao_tarefa = prompt("Informe a posição da tarefa:");
+            let posicao = Number(posicao_tarefa);
+            if(posicao_tarefa === "" || isNaN(posicao) || posicao < 0 || posicao >= tarefas.length){
+                alert("Informe uma posição válida.");
+            }else{
+                let modificar = prompt("Concluida ou pendente:");
+                let partes = tarefas[posicao].split("-");
+                tarefas[posicao] = `${partes[0]} - ${modificar}`
+                alert("Tarefa modificada com sucesso!");
+            }}
         else if(usuario == "5"){
             alert("Programa finalizado.");
             break
